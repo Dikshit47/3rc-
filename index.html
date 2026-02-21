@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3rd Month Anniversary ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  overflow:hidden;
+  color:white;
+  text-align:center;
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:25px;
+  width:90%;
+  max-width:420px;
+  margin:auto;
+  margin-top:12vh;
+  box-shadow:0 8px 30px rgba(0,0,0,0.2);
+  animation:fade 1s;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+button{
+  padding:10px 18px;
+  border:none;
+  border-radius:20px;
+  margin-top:15px;
+  background:white;
+  color:#ff4d6d;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Floating hearts */
+.heart{
+  position:absolute;
+  color:white;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+
+/* Panda animation */
+.panda{
+  font-size:60px;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* typing effect */
+.typing{
+  text-align:left;
+  white-space:pre-line;
+  overflow:hidden;
+  border-right:3px solid white;
+  width:0;
+  animation:typing 4s steps(40,end) forwards;
+}
+
+@keyframes typing{
+  from{width:0;}
+  to{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="app"></div>
+
+<script>
+const app=document.getElementById("app");
+
+/* Floating hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},700);
+
+/* Page 1 */
+function page1(){
+  app.innerHTML=`
+  <div class="card">
+    <h2>Happy 3rd Month Anniversary ❤️</h2>
+    <p>These 3 months with you feel like the most beautiful dream.</p>
+    <button onclick="page2()">Next →</button>
+  </div>`;
+}
+
+/* Page 2 */
+function page2(){
+  app.innerHTML=`
+  <div class="card">
+    <h2>Why You Are Special ✨</h2>
+    <p>
+    You make my world brighter.<br>
+    Your smile fixes my worst days.<br>
+    With you, everything feels right.
+    </p>
+    <button onclick="page3()">Next →</button>
+  </div>`;
+}
+
+/* Page 3 - Panda */
+function page3(){
+  app.innerHTML=`
+  <div class="card">
+    <h2>You Are My Panda 🐼</h2>
+    <div class="panda">🐼</div>
+    <p>
+      Soft like a hug,<br>
+      cute like a dream,<br>
+      and precious like my heart.
+    </p>
+    <button onclick="page4()">Next →</button>
+  </div>`;
+}
+
+/* Page 4 - Final Letter */
+function page4(){
+  app.innerHTML=`
+  <div class="card typing">
+Love u so much mera bachcha 😘
+
+You are not just my girlfriend,
+you are my peace,
+my safe place,
+my biggest happiness,
+You are my wifey💗.
+
+You are my Panda 🐼 —
+cute, warm, and the one I never want to lose.
+
+These 3 months are just the beginning.
+I promise to love you more
+with every single day.
+
+Forever yours ❤️
+  </div>`;
+}
+
+page1();
+</script>
+
+</body>
+</html>
